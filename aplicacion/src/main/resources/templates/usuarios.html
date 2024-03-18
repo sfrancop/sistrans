@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <title>Banco de los Andes | Usuarios</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="text-center">Usuarios</h1>
+
+        
+            <form class="col-sm" action="">
+                <h3>Crear usuario</h3>
+                <label class="col-form-label">Login </label>
+                <input type="text" class="form-control" id="creacion_login" name="creacion_login"/>
+                <label class="col-form-label">Contraseña</label>
+                <input type="text" class="form-control" id="creacion_contrasenia" name="creacion_contrasenia"/>
+                <label class="col-form-label">Tipo de identificacion</label>
+                <input type="text" class="form-control" id="creacion_tipo_identificacion" name="creacion_tipo_identificacion"/>
+                <label class="col-form-label">Numero de identificacion</label>
+                <input type="text" class="form-control" id="creacion_numero_identificacion" name="creacion_numero_identificacion"/>
+                <label class="col-form-label text-center">Nombre</label>
+                <input type="text" class="form-control" id="creacion_nombre" name="creacion_nombre"/>
+                <label class="col-form-label text-center">Nacionalidad</label>
+                <input type="text" class="form-control" id="creacion_nacionalidad" name="creacion_nacionalidad"/>
+                <label class="col-form-label text-center">Direccion</label>
+                <input type="text" class="form-control" id="creacion_direccion" name="creacion_direccion"/>
+                <label class="col-form-label text-center">Correo</label>
+                <input type="text" class="form-control" id="creacion_correo" name="creacion_correo"/>
+                <label class="col-form-label text-center">Telefono</label>
+                <input type="text" class="form-control" id="creacion_telefono" name="creacion_telefono"/>
+                <label class="col-form-label text-center">Ciudad</label>
+                <input type="text" class="form-control" id="creacion_ciudad" name="creacion_ciudad"/>
+                <label class="col-form-label text-center">Departamento</label>
+                <input type="text" class="form-control" id="creacion_departamento" name="creacion_departamento"/>
+                <label class="col-form-label text-center">Codigo postal</label>
+                <input type="text" class="form-control" id="creacion_codigo_postal" name="creacion_codigo_postal"/>
+                <label class="col-form-label text-center">Tipo de persona</label>
+                <input type="text" class="form-control" id="creacion_tipo_persona" name="creacion_tipo_persona"/>
+                <button type="submit" class="btn btn-primary mt-3">Crear usuario</button>
+            </form>
+
+            <form class="col-sm" action="">
+                <h3 class="mt-3">Consultar cliente</h3>
+                <label class="col-form-label">Tipo de identificacion</label>
+                <input type="text" class="form-control" id="id_propietario" name="id_propietario"/>
+                <label class="col-form-label">Numero identificacion</label>
+                <input type="text" class="form-control" id="tipo_cuenta" name="tipo_cuenta"/>
+                <button type="submit" class="btn btn-primary mt-3">Buscar usuario</button>
+            </form>
+        
+
+        <h2 class="text-center">Resultado</h2>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tipo de persona</th>
+                    <th>Nombre</th>
+                    <th>Cuentas</th>
+                    <th>Prestamos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cliente : ${clientes}">
+                    <td th:text="${cliente.tipo_person}"></td>
+                    <td th:text="${cuenta.nombre}"></td>
+                    <td>
+                        <a th:each="cuenta : ${cliente.cuentas}" th:text="${cuenta.numero}"></a>
+                    </td>
+                    <td>
+                        <a th:each="prestamo : ${cliente.prestamos}" th:text="${prestamo.numero}"></a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary mx-auto w-100" th:href="@{/}">Regresar a la pagina principal</a>
+        
+    </div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <title>Banco de los Andes | Cuentas</title>
+</head>
+<body>
+    <div class="container">
+
+        <h1 class="text-center">Cuentas</h1>
+
+        <div class="row">
+            <form class="col-sm" action="">
+                <h3>Buscar cuentas</h3>
+                <label class="col-form-label">Tipo de cuenta </label>
+                <input type="text" class="form-control" id="tipo" name="tipo"/>
+                <label class="col-form-label">Estado de cuenta</label>
+                <input type="text" class="form-control" id="estado" name="estado"/>
+                <label class="col-form-label">Numero de cuenta</label>
+                <input type="text" class="form-control" id="numero" name="numero"/>
+                <label class="col-form-label">Saldo</label>
+                <input type="text" class="form-control" id="saldo" name="saldo"/>
+                <label class="col-form-label text-center">Fecha de ultima transaccion</label>
+                <input type="text" class="form-control" id="fechaUltimaTransaccion" name="fechaUltimaTransaccion"/>
+                <label class="col-form-label text-center">Fecha de creacion</label>
+                <input type="text" class="form-control" id="fechaCreacion" name="fechaCreacion"/>
+                <button type="submit" class="btn btn-primary mt-3">Buscar cuenta</button>
+            </form>
+
+            <form class="col-sm" action="">
+                <h3>Crear cuentas</h3>
+                <label class="col-form-label">Numero de identificación del propietario</label>
+                <input type="text" class="form-control" id="id_propietario" name="id_propietario"/>
+                <label class="col-form-label">Tipo de cuenta</label>
+                <input type="text" class="form-control" id="tipo_cuenta" name="tipo_cuenta"/>
+                <label class="col-form-label">Numero de cuenta</label>
+                <input type="text" class="form-control" id="numero_cuenta" name="numero_cuenta"/>
+                <button type="submit" class="btn btn-primary mt-3">Crear cuenta cuenta</button>
+            </form>
+        <div>
+
+        <h2 class="text-center">Lista de cuentas</h2>
+        <table class="table table-hover table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Tipo</th>
+                    <th>Estado</th>
+                    <th>Numero de cuenta</th>
+                    <th>Saldo</th>
+                    <th>Fecha de ultima transaccion</th>
+                    <th>Fecha de creacion</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="cuenta : ${cuentas}">
+                    <td th:text="${cuenta.tipo}"></td>
+                    <td th:text="${cuenta.estado}"></td>
+                    <td th:text="${cuenta.numeroCuenta}"></td>
+                    <td th:text="${cuenta.saldo}"></td>
+                    <td th:text="${cuenta.fechaUltimaTransaccion}"></td>
+                    <td th:text="${cuenta.fechaCreacion}"></td>
+                    <td>
+                        <a class="btn btn-primary">Cambiar estado</a>
+                        <a class="btn btn-primamry">Registrar operacion</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <a class="btn btn-primary mx-auto w-100" th:href="@{/}">Regresar a la pagina principal</a>
+        
+    </div>
+</body>
+</html>
