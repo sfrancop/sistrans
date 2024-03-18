@@ -17,11 +17,11 @@ public interface PrestamoRepository extends JpaRepository<Prestamo, Integer>{
     Collection<Prestamo> darPrestamos();
    
     @Query (value= "SELECT * FROM prestamos WHERE id = :id_prestamo", nativeQuery = true)
-    Prestamo darPrestamo(@Param("id_prestaamo") int id);
+    Prestamo darPrestamo(@Param("id_prestamo") int id);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO prestamos (id_prestamo, tipo, estado, monto, interes, numero_cutoas, dia_pago, valor_cuota) VALUES (:id_prestamo, :tipo, :estado, :monto, :interes, :numero_cuotas, :dia_pago, :valor_cuota)", nativeQuery = true)
+    @Query(value = "INSERT INTO prestamos (id_prestamo, tipo, estado, monto, interes, numero_cutoas, dia_pago, valor_cuota, saldo) VALUES (:id_prestamo, :tipo, :estado, :monto, :interes, :numero_cuotas, :dia_pago, :valor_cuota, :saldo)", nativeQuery = true)
     void insertarPrestamo (@Param("id_prestamo") Integer id_prestamo,
         @Param("tipo") String tipo,
         @Param("estado") String estado,

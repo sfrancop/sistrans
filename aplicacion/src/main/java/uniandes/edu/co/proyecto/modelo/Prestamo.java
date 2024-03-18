@@ -36,6 +36,9 @@ public class Prestamo {
     public Integer getIdPrestamo() {
         return idPrestamo;
     }
+    public float getSaldoPendiente(){
+        return this.getSaldo();
+    }
     public void setIdPrestamo(Integer idPrestamo) {
         this.idPrestamo = idPrestamo;
     }
