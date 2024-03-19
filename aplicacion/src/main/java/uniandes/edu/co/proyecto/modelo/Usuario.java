@@ -7,30 +7,41 @@ import jakarta.persistence.Table;
 @Table(name="usuarios")
 public class Usuario {
 
-    private String login;
-    private String contrasenia;
-    private String tipo_identificacion;
+    public String login;
+    public String contrasena;
+    public String tipo_identificacion;
     @Id
-    private String numero_identificacion;
-    private String nombre;
-    private String nacionalidad;
-    private String corrreo; 
-    private String telefono;
-    private String tipo_persona;
-    private Integer id_cliente;
+    public String numero_identificacion;
+    public String nombre;
+    public String nacionalidad;
+    public String direccion;
+    public String correo; 
+    public String telefono;
+    public String ciudad;
+    public String departamento;
+    public String codigo_postal;
+    public String tipo_person;
+    public Integer id_cliente;
 
     public Usuario(){;}
 
-    public Usuario(String login, String contraseña, String tipo_id, String numero_id, String nombre, String nacionalidad, String corrreo, String telefono, String ciudad, String departamento, String codigo_postal, String tipo_persona) {
+    public Usuario(String login, String contrasena, String tipo_identificacion, String numero_identificacion,
+            String nombre, String nacionalidad, String direccion, String correo, String telefono, String ciudad,
+            String departamento, String codigo_postal, String tipo_person, Integer id_cliente) {
         this.login = login;
-        this.contrasenia = contraseña;
-        this.tipo_identificacion = tipo_id;
-        this.numero_identificacion = numero_id;
+        this.contrasena = contrasena;
+        this.tipo_identificacion = tipo_identificacion;
+        this.numero_identificacion = numero_identificacion;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
-        this.corrreo = corrreo;
+        this.direccion = direccion;
+        this.correo = correo;
         this.telefono = telefono;
-        this.tipo_persona = tipo_persona;
+        this.ciudad = ciudad;
+        this.departamento = departamento;
+        this.codigo_postal = codigo_postal;
+        this.tipo_person = tipo_person;
+        this.id_cliente = id_cliente;
     }
 
     public String getLogin() {
@@ -41,12 +52,12 @@ public class Usuario {
         this.login = login;
     }
 
-    public String getContrasenia() {
-        return contrasenia;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getTipo_identificacion() {
@@ -81,12 +92,20 @@ public class Usuario {
         this.nacionalidad = nacionalidad;
     }
 
-    public String getCorrreo() {
-        return corrreo;
+    public String getDireccion() {
+        return direccion;
     }
 
-    public void setCorrreo(String corrreo) {
-        this.corrreo = corrreo;
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public String getCorreo() {
+        return correo;
+    }
+
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
 
     public String getTelefono() {
@@ -97,12 +116,36 @@ public class Usuario {
         this.telefono = telefono;
     }
 
-    public String getTipo_persona() {
-        return tipo_persona;
+    public String getCiudad() {
+        return ciudad;
     }
 
-    public void setTipo_persona(String tipo_persona) {
-        this.tipo_persona = tipo_persona;
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
+    }
+
+    public String getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(String departamento) {
+        this.departamento = departamento;
+    }
+
+    public String getCodigo_postal() {
+        return codigo_postal;
+    }
+
+    public void setCodigo_postal(String codigo_postal) {
+        this.codigo_postal = codigo_postal;
+    }
+
+    public String getTipo_person() {
+        return tipo_person;
+    }
+
+    public void setTipo_person(String tipo_person) {
+        this.tipo_person = tipo_person;
     }
 
     public Integer getId_cliente() {
@@ -112,6 +155,9 @@ public class Usuario {
     public void setId_cliente(Integer id_cliente) {
         this.id_cliente = id_cliente;
     }
+
+
+    
 
     
 

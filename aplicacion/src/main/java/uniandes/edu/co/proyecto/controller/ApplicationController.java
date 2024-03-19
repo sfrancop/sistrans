@@ -11,15 +11,5 @@ public class ApplicationController {
         return "index";
     }
 
-    @RequestMapping("/cuentas")
-    public String cuentas() {
-        return "cuentas";
-    }
-
-    @RequestMapping("/usuarios")
-    public String usuarios() {
-        return "usuarios";
-    }
-
 
 }

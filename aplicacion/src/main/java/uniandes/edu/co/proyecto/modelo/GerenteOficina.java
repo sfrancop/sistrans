@@ -13,38 +13,38 @@ public class GerenteOficina {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private String login;
-    private String contraseña;
+    private String contrasena;
     private String tipo_id;
     private String numero_id;
     private String nombre;
     private String nacionalidad;
-    private String corrreo; 
+    private String correo; 
     private String telefono;
     private String ciudad; 
     private String departamento;
     private String codigo_postal;
-    private String tipo_persona;;
+    private String tipo_person;
 
-    public GerenteOficina(String login, String contraseña, String tipo_id, String numero_id, String nombre, String nacionalidad, String corrreo, String telefono, String ciudad, String departamento, String codigo_postal, String tipo_persona) {
+    public GerenteOficina(String login, String contrasena, String tipo_id, String numero_id, String nombre, String nacionalidad, String correo, String telefono, String ciudad, String departamento, String codigo_postal, String tipo_person) {
         this.login = login;
-        this.contraseña = contraseña;
+        this.contrasena = contrasena;
         this.tipo_id = tipo_id;
         this.numero_id = numero_id;
         this.nombre = nombre;
         this.nacionalidad = nacionalidad;
-        this.corrreo = corrreo;
+        this.correo = correo;
         this.telefono = telefono;
         this.ciudad = ciudad;
         this.departamento = departamento;
         this.codigo_postal = codigo_postal;
-        this.tipo_persona = tipo_persona;
+        this.tipo_person = tipo_person;
     }
     public GerenteOficina() {;}
     public String getLogin() {
         return login;
     }
-    public String getContraseña() {
-        return contraseña;
+    public String getContrasena() {
+        return contrasena;
     }
     public String getTipo_id() {
         return tipo_id;
@@ -58,8 +58,8 @@ public class GerenteOficina {
     public String getNacionalidad() {
         return nacionalidad;
     }
-    public String getCorrreo() {
-        return corrreo;
+    public String getCorreo() {
+        return correo;
     }
     public String getTelefono() {
         return telefono;
@@ -73,14 +73,14 @@ public class GerenteOficina {
     public String getCodigo_postal() {
         return codigo_postal;
     }
-    public String getTipo_persona() {
-        return tipo_persona;
+    public String geTipo_person() {
+        return tipo_person;
     }
     public void setLogin(String login) {
         this.login = login;
     }
-    public void setContraseña(String contraseña) {
-        this.contraseña = contraseña;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
     public void setTipo_id(String tipo_id) {
         this.tipo_id = tipo_id;
@@ -94,8 +94,8 @@ public class GerenteOficina {
     public void setNacionalidad(String nacionalidad) {
         this.nacionalidad = nacionalidad;
     }
-    public void setCorrreo(String corrreo) {
-        this.corrreo = corrreo;
+    public void setCorreo(String correo) {
+        this.correo = correo;
     }
     public void setTelefono(String telefono) {
         this.telefono = telefono;
@@ -109,8 +109,8 @@ public class GerenteOficina {
     public void setCodigo_postal(String codigo_postal) {
         this.codigo_postal = codigo_postal;
     }
-    public void setTipo_persona(String tipo_persona) {
-        this.tipo_persona = tipo_persona;
+    public void setTipo_person(String tipo_person) {
+        this.tipo_person = tipo_person;
     }
 
     

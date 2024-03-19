@@ -19,6 +19,12 @@ public class CuentasController {
     @Autowired
     private CuentaRepository cuentaRepository;
 
+    @GetMapping("/cuentas")
+    public String cuentas(Model model) {
+        //model.addAttribute("cuentas", cuentaRepository.darCuentas());
+        return "cuentas";
+    }
+
     @GetMapping("/cuentas/new")
     public String userForm(Model model) {
         model.addAttribute("cuenta", new Cuenta());
