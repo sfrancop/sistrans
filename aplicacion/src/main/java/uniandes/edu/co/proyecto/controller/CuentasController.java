@@ -22,6 +22,11 @@ public class CuentasController {
     @Autowired
     private CuentaRepository cuentaRepository;
 
+    @GetMapping("/cuentas")
+    public String cuentas(Model model) {
+        //model.addAttribute("cuentas", cuentaRepository.darCuentas());
+        return "cuentas";
+    }
     @Autowired
     private OperacionesCuentaRepository operacionesCuentaRepository;
     

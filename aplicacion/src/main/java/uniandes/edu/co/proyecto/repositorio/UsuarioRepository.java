@@ -21,7 +21,6 @@ public interface UsuarioRepository extends JpaRepository<Usuario, Integer>{
 
         @Modifying
         @Transactional
-        @Query(value = "INSERT INTO usuarios (login, contrasenia, tipo_identificacion, numero_identificacion, nombre, nacionalidad, correo, telefono, tipo_persona, id_cliente) VALUES (:login, :contrasenia, :tipo_identificacion, :numero_identificacion, :nombre, :nacionalidad, :correo, :telefono, :tipo_persona, :id_cliente)", nativeQuery = true)
-        void insertarUsuario(@Param("login") String login, @Param("contrasenia") String contrasenia,
-        @Param("tipo_identificacion") String tipo_identificacion, @Param("numero_identificacion") String numero_identificacion, @Param("nombre") String nombre, @Param("nacionalidad") String nacionalidad, @Param("correo") String correo, @Param("telefono") String telefono, @Param("tipo_persona") String tipo_persona, @Param("id_cliente") Integer id_cliente);
+        @Query(value = "INSERT INTO usuarios (login, contrasena, tipo_identificacion, numero_identificacion, nombre, nacionalidad, direccion, correo, telefono, ciudad, departamento, codigo_postal, tipo_person, id_cliente) VALUES (:login, :contrasena, :tipo_identificacion, :numero_identificacion , :nombre, :nacionalidad, :direccion, :correo, :telefono, :ciudad, :departamento, :codigo_postal,  :tipo_person, secuencia_ids.nextval)", nativeQuery = true)
+        void insertarUsuario (@Param("login") String login, @Param("contrasena") String contrasena, @Param("tipo_identificacion") String tipo_identificacion, @Param("numero_identificacion") String numero_identificacion, @Param("nombre") String nombre, @Param("nacionalidad") String nacionalidad, @Param("direccion") String direccion, @Param("correo") String correo, @Param("telefono") String telefono, @Param("ciudad") String ciudad, @Param("departamento") String departamento, @Param("codigo_postal") String codigo_postal, @Param("tipo_person") String tipo_person);
 }

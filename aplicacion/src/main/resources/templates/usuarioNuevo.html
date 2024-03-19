@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/css/bootstrap.min.css}"/>
+    <title>Banco de los Andes | Cuentas</title>
+</head>
+<body>
+    <div class="container">
+        <form class="col-sm" th:action="@{/usuarios/new/save}" method="post">
+            <h3>Crear usuario</h3>
+            <label class="col-form-label">Login </label>
+            <input type="text" class="form-control" id="login" name="login" th:value="${usuario.login}"/>
+            <label class="col-form-label">Contrasena</label>
+            <input type="text" class="form-control" id="contrasena" name="contrasena" th:value="${usuario.contrasena}"/>
+            <label class="col-form-label">Tipo de identificacion</label>
+            <input type="text" class="form-control" id="tipo_identificacion" name="tipo_identificacion" th:value="${usuario.tipo_identificacion}"/>
+            <label class="col-form-label">Numero de identificacion</label>
+            <input type="text" class="form-control" id="numero_identificacion" name="numero_identificacion" th:value="${usuario.numero_identificacion}"/>
+            <label class="col-form-label text-center">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" th:value="${usuario.nombre}"/>
+            <label class="col-form-label text-center">Nacionalidad</label>
+            <input type="text" class="form-control" id="nacionalidad" name="nacionalidad" th:value="${usuario.nacionalidad}"/>
+            <label class="col-form-label text-center">Direccion</label>
+            <input type="text" class="form-control" id="direccion" name="direccion" th:value="${usuario.direccion}"/>
+            <label class="col-form-label text-center">Correo</label>
+            <input type="text" class="form-control" id="correo" name="correo" th:value="${usuario.correo}"/>
+            <label class="col-form-label text-center">Telefono</label>
+            <input type="text" class="form-control" id="telefono" name="telefono" th:value="${usuario.telefono}"/>
+            <label class="col-form-label text-center">Ciudad</label>
+            <input type="text" class="form-control" id="ciudad" name="ciudad" th:value="${usuario.ciudad}"/>
+            <label class="col-form-label text-center">Departamento</label>
+            <input type="text" class="form-control" id="departamento" name="departamento" th:value="${usuario.departamento}"/>
+            <label class="col-form-label text-center">Codigo postal</label>
+            <input type="text" class="form-control" id="codigo_postal" name="codigo_postal" th:value="${usuario.codigo_postal}"/>
+            <label class="col-form-label text-center">Tipo de persona</label>
+            <input type="text" class="form-control" id="tipo_person" name="tipo_person" th:value="${usuario.tipo_person}"/>
+            <input value="Guardar" type="submit" class="btn btn-primary mt-3">Crear usuario</button>
+        </form>
+    </div>
+</body>
+</html>
